@@ -1,0 +1,20 @@
+body {
+    font-size: x-large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(205, 205, 205);
+
+}
+
+h1 {
+    margin-left: p15x;
+}
+
+h4 {
+    text-decoration: underline
+}
+
+input,
+select {
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
