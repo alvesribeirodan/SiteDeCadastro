@@ -12,27 +12,27 @@
     <h1>Cadastro</h1>
     <h4>Dados do usuário</h4>
     <label>Nome:</label>
-    <input type="text">
+    <input id="J" type="text">
     <label>Idade:</label>
-    <input type="number">
+    <input id="K" type="number">
     <label>Sexo:</label>
-    <select>
-        <option value="Masculino">Masculino</option>
-        <option value="Feminino">Feminino</option>
-        <option value="Desconhecido">Prefiro não informar</option>
+    <select id="L">
+        <option value="masculino">Masculino</option>
+        <option value="feminino">Feminino</option>
+        <option value="indeterminado">Prefiro não informar</option>
     </select>
     <br>
     <label>CPF:</label>
-    <input type="number" maxlength="11">
+    <input id="A" type="number" maxlength="11">
     <label>Data de nascimento:</label>
-    <input type="date">
+    <input id="B" type="date">
     <label>CEP:</label>
-    <input type="number">
+    <input id="C" type="number">
     <br>
     <label>Endereço:</label>
-    <input type="text">
+    <input id="D" type="text">
     <label>UF:</label>
-    <select>
+    <select id="E">
         <option>AC</option>
         <option>AL</option>
         <option>AM</option>
@@ -62,21 +62,41 @@
         <option>TO</option>
     </select>
     <label>E-mail:</label>
-    <input type="email">
+    <input id="F" type="email">
     <h4>Informações do perfil</h4>
     <label>Username:</label>
-    <input type="text">
+    <input id="G" type="text">
     <br>
     <label>Senha:</label>
-    <input type="password">
+    <input id="H" type="password">
     <br>
     <label>Confirmação de senha:</label>
-    <input type="password">
+    <input id="I" type="password">
     <br>
-    <a href="https://img.elo7.com.br/product/zoom/4C987AD/tags-para-presente-parabens-feliz-aniversario-tag-felicidades.jpg"
-        >
-        <input type="button" value="CADASTRAR">
-    </a>
+    <input type="button" value="CADASTRAR" onclick="cadastrar()">
+    <div id="cad"></div>
+    <script>
+        function cadastrar() {
+            var nome = document.getElementById("J").value
+            var idade = document.getElementById("K").value
+            var sexo = document.getElementById("L").value
+            var cpf = document.getElementById("A").value
+            var data = document.getElementById("B").value
+            var cep = document.getElementById("C").value
+            var end = document.getElementById("D").value
+            var uf = document.getElementById("E").value
+            var email = document.getElementById ("F").value
+            var user = document.getElementById("G").value
+            var senha = document.getElementById("H").value
+            var confsenha = document.getElementById("I").value
+            var cad = document.getElementById("cad")
+            if (senha == confsenha) {
+                cad.innerHTML = `CADASTRO CONCLUÍDO! Seu nome é ${nome}, você tem ${idade} anos de idade, seu sexo é ${sexo}, seu CPF é ${cpf} e você nasceu em ${data}. 
+                Você mora em ${end}, CEP ${cep}, ${uf}.`
+            }
+            else { cad.innerHTML = `A senha não corresponde à confirmação.`}
+        }
+    </script>
 </body>
 
 </html>
